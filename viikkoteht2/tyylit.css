@@ -1,0 +1,15 @@
+#lomakeId fieldset {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+#lomakeId label {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.35em;
+}
+
+#lomakeId button {
+    align-self: flex-start;
+}
