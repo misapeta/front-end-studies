@@ -1,0 +1,156 @@
+@charset "UTF-8";
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: black;
+    color: aliceblue;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    overflow: hidden;
+}
+
+div {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+/* Kuvan neljännes (ylävasemmalta) liikkuu keskeltä vasempaan yläkulmaan*/
+.vasen-yla {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-100%, -100%);
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-name: vasen-yla;
+}
+
+@keyframes vasen-yla {
+    from {position: absolute; left: 50%; top: 50%; }
+    to {  position: absolute; left: 0%;  top: 0%;
+                transform: translate(0%, 0%);   }
+}
+
+/* Kuvan neljännes (yläoikealta) liikkuu keskeltä oikeaan yläkulmaan*/
+.oikea-yla {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(0%, -100%);
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-name: oikea-yla;
+}
+
+@keyframes oikea-yla {
+    from {position: absolute; left: 50%; top: 50%; }
+    to {  position: absolute; left: 100%; top: 0%; 
+                transform: translate(-100%, 0%);  }
+}
+
+/* Kuvan neljännes (alavasemmalta) liikkuu keskeltä vasempaan alakulmaan */
+.vasen-ala {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-100%, 0%);
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-name: vasen-ala;
+}
+
+@keyframes vasen-ala {
+    from {position: absolute; left: 50%; top: 50%;     }
+    to {  position: absolute; left: 0%; top: 100%; 
+                transform: translate(0%, -100%);  }
+}
+
+/* Kuvan neljännes (alaoikealta) liikkuu keskeltä oikeaan alakulmaan */
+.oikea-ala {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(0%, 0%);
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-name: oikea-ala;
+}
+
+@keyframes oikea-ala {
+    from { position: absolute; left: 50%; top: 50%; }
+    to {   position: absolute; left: 100%; top: 100%; 
+                transform: translate(-100%, -100%); }
+}
+
+/* alusanimaatiot */
+
+#alus1 {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    animation-duration: 5s;
+    animation-name: alus1;
+    animation-iteration-count: infinite;
+}
+
+#alus2 {
+    position: absolute;
+    top: calc(100% - 100px);
+    left: calc(100% - 100px);
+    animation-duration: 5s;
+    animation-name: alus2;
+    animation-iteration-count: infinite;
+}
+
+@keyframes alus1{
+    from{ top: 0%; left: 0%;  }
+    25% { top: calc(100% - 100px); left: calc(50% - 50px); }
+    50%{  top: 0%; left:calc(100% - 100px); }
+    75%{  top: calc(100% - 100px); left: calc(50% - 50px); }
+    100%{ top: 0%; left: 0%;  }
+}
+
+@keyframes alus2{
+    from{ top: calc(100% - 100px); left: calc(100% - 100px); }
+    25%{  top: 0%;   left: calc(50% - 50px); }
+    50%{  top: calc(100% - 100px); left: 0%; }
+    75%{  top: 0%;   left: calc(50% - 50px); }
+    100%{ top: calc(100% - 100px); left: calc(100% - 100px); }
+}
+
+/* Palkkigradienttianimaatiot */
+#palkkigradientit {
+    background-color: black;
+}
+
+.palkki{
+    position: absolute;
+    left: -10%;
+    animation-duration: 10s;
+    animation-name: slide;
+    animation-iteration-count: infinite;
+}
+
+@keyframes slide {
+    from{   left: -10%;  fill: url(#Gradient1);  }
+    49%{    fill: url(#Gradient1);  }
+    50%{    left: 100%;  fill: url(#Gradient2);  }
+    100%{   left: -10%;  fill: url(#Gradient2);  }
+}
